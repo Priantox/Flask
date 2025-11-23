@@ -7,7 +7,7 @@
 
 <h3>📌 Activate the Virtual Environment</h3>
 <ul>
-  <li><strong>Windows:</strong> <code>venv\Scripts\activate</code></li>
+  <li><strong>Windows:</strong> <code>venv\Scripts\activate  (venv can be another name)</code></li>
 </ul>
 
 <h3>📌 Install Flask</h3>
