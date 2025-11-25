@@ -1,13 +1,5 @@
-from flask import Flask, render_template
-from forms import RegistrationForm, LoginForm
-from flask_sqlalchemy import SQLAlchemy
+from app import db
 from datetime import datetime
-app = Flask(__name__)
-
-app.config['SECRET_KEY'] = '486a440762160cd1032b6b88a8e90e8c'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-
-db = SQLAlchemy(app)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -30,17 +22,3 @@ class Post(db.Model):
 
     def __repr__(self):
         return f"Post('{self.title}','{self.data_posted}')"
-
-
-@app.route('/')
-def index():
-    return render_template('home.html')
-
-
-@app.route("/register")
-def register():
-    form = RegistrationForm()
-    return render_template('register.html', title='Register', form=form)
-
-if __name__ == "__main__":
-    app.run(debug=True)

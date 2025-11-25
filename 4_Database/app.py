@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from forms import RegistrationForm, LoginForm
+from app.forms import RegistrationForm, LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 app = Flask(__name__)
